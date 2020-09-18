@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <!-- <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a> -->
+      <div class="dropdown" id="info-user" style="display: none;">
+        <button id="user" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a href="cart.html" class="dropdown-item">Ver Mi Carrito</a>
+          <a href="my-profile.html" class="dropdown-item">Mi Perfil</a>
+          <a id="salir" class="dropdown-item">Cerrar sesión</a>
+        </div>
+        </div>
+   
+    </div>
+    
+  
+  </nav>
+ <div class="verProducto">
+<div id="contenido"></div>
+<div id="imagenes"></div>
+<ul class="menu">
+  <li><a href="#slide1"></a></li>
+  <li><a href="#slide2"></a></li>
+  <li><a href="#slide3"></a></li>
+  <li><a href="#slide4"></a></li>
+  <li><a href="#slide5"></a></li>
+</ul>
+<div id="comentarios"></div> <br>
+<div id="newComment" class="newComment" style="display: none;">
+
+<p>Cuentanos tu opinion</p>
+<textarea id="newComm" cols="60" rows="8"></textarea><br>
+<p>Califica:</p>
+<div id="stars"></div>
+<!-- <select id="newCal">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select><br><br> -->
+<button id="enviarComm">Enviar</button>
+
+</div>
+<br><br><hr>
+
+<div class="verProducto">
+  <h4 style="text-align: center; border: 1px solid #dee2e6;  width: 30%;margin: auto;">Productos Relacionados:</h4>
+  <div id="relatedProduct"></div>
+</div><hr>
+
+<a class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+
+
+ </div>
+
+
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a class="link" target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/stars.js" ></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
+</body>
+
+</html>
