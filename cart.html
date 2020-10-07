@@ -11,6 +11,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <style>
     .bd-placeholder-img {
@@ -44,23 +45,131 @@
       <div class="dropdown" id="info-user" style="display: none;">
         <button id="user" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a href="inicio.html" class="dropdown-item">Inicio</a>
-          <a href="my-profile.html" class="dropdown-item">Mi Perfil</a>
-          <a id="salir" class="dropdown-item">Cerrar sesión</a>
+           <a href="my-profile.html" class="dropdown-item"><i class="fas fa-user"></i>&nbsp;&nbsp;Mi Perfil</a>
+          <a id="salir" class="dropdown-item"><i class="far fa-times-circle"></i>&nbsp;&nbsp;Cerrar sesión</a>
         </div>
         </div>
    
     </div>
      
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <h1 style=" text-align: center; font-family:Verdana, Geneva, Tahoma, sans-serif;color:dodgerblue;"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Carrito</h1>
+
+   <br>
+     
+    <div id="prodcart" class="carrito">
+      <table>
+        <thead class="thead">
+            <tr>
+            <th>Producto</th>
+            <th>Precio por unidad</th>
+            <th>Cantidad</th>
+            <th>Subtotal(USD)</th>
+          </tr>
+        </thead>
+        <tbody id="contenido"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" style="font-size: 30px";>Total</td>
+            <td class="uyu"><b>USD</b></td>
+            <td id="total"></td>
+          </tr>
+        </tfoot>
+      </table>
+     
+   
+    
+     <div class="sell">
+       
+       <h2 style="text-align: center; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Resumen del pedido</h2><hr style="border: 1px  solid grey; ">
+       <div><h5>Zona de envío:</h5>
+         <input id="montevideo" type="radio" name="envio" value="2" checked="" required="" >
+         <label for="montevideo">Montevideo: 2 dias</label><br>
+          
+         <input id="sur" type="radio" name="envio" value="4" required="" >
+         <label for="sur">Sur del Río Negro: 4 dias</label><br>
+   
+         <input id="norte" type="radio" name="envio" value="6" required="" >
+         <label for="norte">Norte del Río Negro: 6 dias</label><br>
+      
+      
+       </div>
+       <br>
+   
+       <table class="send">
+         <thead>
+           <tr>
+             <th>Precio de compra</th>
+             <th>Días para entregar</th>
+             <th> Precio Final</th>
+           </tr>
+         </thead>
+         <tbody  id="cargototal"></tbody>
+       </table><br>
+       <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">Comprar</button>
+
+      </div>
+   
+    </div>
+<!---------------------------------MODAL----------------------------------------------------------->
+
+<div class="modal fade" id="modalPagar">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Ingrese sus datos</h5>
+      </div>
+      <div id="modal-body" class="modal-body">
+        <form action="inicio.html" id="needs-validation" novalidate>
+          <div>
+            <h4>Datos del comprador:</h4>
+            <input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
+            <div class="invalid-feedback">Por favor, ingrese su nombre</div><br>   
+
+            <input type="text" id="apellido" class="form-control" placeholder="Apellido" required>
+            <div class="invalid-feedback">Por favor, ingrese su apellido</div><br>   
+
+          </div>
+          <div>
+            <h4>Datos para el envío:</h4>
+            <label for="depto">Departamento</label><br>
+            <select class="form-control" id="depto">
+              <option>Montevideo</option>
+              <option>Artigas</option>
+              <option>Canelones</option>
+              <option>Cerro Largo</option>
+              <option>Colonia</option>
+              <option>Durazono</option>
+              <option>Flores</option>
+              <option>Florida</option>
+              <option>Lavalleja</option>
+              <option>Maldonado</option>
+              <option>Paysandú</option>
+              <option>Río Negro</option>
+              <option>Rivera</option>
+              <option>Rocha</option>
+              <option>Salto</option>
+              <option>San José</option>
+              <option>Soriano</option>
+              <option>Tacuarembó</option>
+              <option>Treinta y Tres</option>
+            </select><br>
+            <input type="text" id="dir" class="form-control" placeholder="Dirección" required>
+            <div class="invalid-feedback">Por favor, ingrese su dirección</div><br>   
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-block btn-success">Confirmar Prestamo</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          </div>
+
+        </form>
+      </div>
     </div>
   </div>
+  <!-------------------------------------------------------------------------------------------->
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

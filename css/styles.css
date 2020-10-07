@@ -633,4 +633,76 @@ width: 100%;
   cursor: pointer;
 }
 
+/* Cart */
+.carrito {
+  width: 95%;
+  float: left;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.imgcart {
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding: 0.25rem;
+  background-color: #fff;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+table thead tr th {
+  padding: 10px;
+  color: #d41c6c;
+  text-align: center;
+  width: 30%;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+.cart {
+  border-bottom: 1px solid #aaaaaa;
+  padding: 10px;
+  position: relative;
+}
+table tfoot td {
+  padding: 10px;
+  font-size: 17px;
+}
+.sell {
+  background-color: rgb(228, 228, 241);
+  margin-left: 90px;
+  padding: 10px;
+  width: 400px;
+  height: auto;
+  float: right;
+}
+.envios {
+  float: right;
+  width: 10px;
+ f}
+.uyu {
+  background:  rgb(228, 228, 241);
+}
+#total {
+  background-color:  rgb(228, 228, 241);
+  padding: 2px;
+}
+.elim {
+  margin: auto;
+  text-align: center;
+  background-color: lightsteelblue;
+  padding: 10px;
+}
+#cargototal {
+  text-align: center;
+  border: black 1px solid;
+  
+  
+}
+.send thead tr th {
+  background: white;
+  color: black;
+  
+ }
+
 
