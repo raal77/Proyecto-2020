@@ -363,42 +363,39 @@ small {
   width: 100%;
   height: 35px;
   margin-left: 10px;
+  margin-top: 5px;
 
   border: none;
 }
 
-#search {
-  display: flex;
-  width: 40px;
-  height: 35px;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-  background-color: white;
-  color: black;
-  border-radius: 10px;
-  transform: translateX(30px);
-  margin-left: -30px;
-  padding: 10px;
-}
-
-#search:hover {
-  cursor: pointer;
-}
-#search:focus {
-  display: flex;
-  width: 80%;
-  height: 35px;
-}
-.title_search {
-  width: 30px;
-  height: 35px;
-  border-radius: 100%;
-  color: black;
-  background-color: #d41c6c;
-  font-size: 30px;
-  text-align: center;
-}
+ 
+  #search {
+    display: flex;
+    width: 30%;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    background-color: white;
+    color: black;
+    border-radius: 35px;
+    transform: translateX(30px);
+    margin-left: -30px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+  display: none;
+  
+  }
+  
+  .title_search {
+    width: 70px;
+    height: 35px;
+    border-radius: 10px;
+    color: black;
+    background-color: #d41c6c;
+    font-size: 27px;
+    text-align: center;
+    cursor: pointer;}
 /* NAV  */
 .nav {
   width: 100%;
@@ -586,33 +583,15 @@ ul.slider li:target {
   padding-right: 200px;
   padding-left: 200px;
  }
-.titleRel {
-  margin-left: 150px;
-  padding-top: 20px;
-  cursor: pointer;
-}
-.titleRel:hover{
-  color: #d41c6c;
-}
-.img-rel {
-  padding: 0.25rem;
-  background-color:#fff;
-  border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
-  max-width: 100%;
-  height: auto;
-  margin-right: 40px;
-  cursor: pointer;
-}
-.img-rel img{
-  opacity: 0.5;
-}
-.img-rel img:hover{
-  opacity: 1;
-  border-color:  #53c0fb;
-  background-color: #53c0fb;
-}
-/* MENU DESPLEGABLE */
+ #relatedProduct img{
+opacity: 0.5;
+ }
+ #relatedProduct img:hover{
+   opacity: 1;
+   width: 400px;
+  }
+
+ /* MENU DESPLEGABLE */
 
 .dropdown-menu{
   color:white;
@@ -679,7 +658,7 @@ table tfoot td {
 .envios {
   float: right;
   width: 10px;
- f}
+ }
 .uyu {
   background:  rgb(228, 228, 241);
 }

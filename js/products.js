@@ -151,6 +151,9 @@ document.getElementById("search").addEventListener("input",function(){
     showProducts(productsArray);
    });
   
+   document.getElementById("btn-buscar").addEventListener("click",function(){
+    document.getElementById("search").style="display:flex";
+})
 
  
 
