@@ -371,19 +371,16 @@ small {
  
   #search {
     display: flex;
-    width: 30%;
-    height: 35px;
+    width: 150%;
+    height: 3px;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
     background-color: white;
     color: black;
     border-radius: 35px;
     transform: translateX(30px);
     margin-left: -30px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-  display: none;
+    display: none;
   
   }
   
