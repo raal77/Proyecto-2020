@@ -644,14 +644,8 @@ table tfoot td {
   padding: 10px;
   font-size: 17px;
 }
-.sell {
-  background-color: rgb(228, 228, 241);
-  margin-left: 90px;
-  padding: 10px;
-  width: 400px;
-  height: auto;
-  float: right;
-}
+
+/*ENVIOS */
 .envios {
   float: right;
   width: 10px;

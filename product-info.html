@@ -17,8 +17,9 @@
 </head>
 
 <body>
-  <nav class="nav">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
+  <nav class="nav row">
+    <div class=" d-flex flex-column flex-md-row col justify-content-between">
+       
       <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
@@ -26,20 +27,26 @@
       <!-- <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a> -->
       <div class="dropdown" id="info-user" style="display: none;">
         <button id="user" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-menu col-6 col-sm-12" aria-labelledby="dropdownMenuButton">
+          
+          <a href="inicio.html" class="dropdown-item"><i class="fas fa-home"></i>&nbsp;&nbsp;Inicio</a>
+          <a href="categories.html" class="dropdown-item"><i class="fas fa-archive"></i>&nbsp;&nbsp;Categorías</a>
+          <a href="products.html" class="dropdown-item"><i class="far fa-folder-open"></i>&nbsp;&nbsp; Productos</a>
           <a href="cart.html" class="dropdown-item"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Mi Carrito</a>
           <a href="my-profile.html" class="dropdown-item"><i class="fas fa-user"></i>&nbsp;&nbsp;Mi Perfil</a>
           <a id="salir" class="dropdown-item"><i class="far fa-times-circle"></i>&nbsp;&nbsp;Cerrar sesión</a>
         </div>
-        </div>
-   
+         
+      </div>
     </div>
     
   
   </nav>
  <div class="verProducto">
 <div id="contenido"></div>
-<div id="imagenes"></div>
+<div id="imagenes" class="row"></div>
+<div class="row justify-content-center">
+  <div class="col col-sm-12">
 <ul class="menu">
   <li><a href="#slide1"></a></li>
   <li><a href="#slide2"></a></li>
@@ -47,7 +54,9 @@
   <li><a href="#slide4"></a></li>
   <li><a href="#slide5"></a></li>
 </ul>
-<div id="comentarios"></div> <br>
+</div>
+</div>
+<div id="comentarios" class="row justify-content-center"></div> <br>
 <div id="newComment" class="newComment" style="display: none;">
 
 <p>Cuentanos tu opinion</p>
@@ -66,7 +75,7 @@
 </div>
 <br><br><hr>
 
-<div class="verProducto">
+<div class="verProducto row">
   <h4 style="text-align: center; border: 1px solid #dee2e6;  width: 30%;margin: auto;">Productos Relacionados:</h4>
   <div id="relatedProduct"></div>
 </div><hr>

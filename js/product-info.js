@@ -8,12 +8,14 @@ function verRelacionados(){
 function showRelatedProds(arrayListado,arrayRelacionados){
     let contenido ="";
     arrayRelacionados.forEach(function(i){
-    contenido += `<div class="card" style="width: 25rem; margin:auto">
+    contenido += `<div class="card row" style="width: 25rem; margin:auto">
+    <div class="col-12 col-sm-6">
     <img src="${arrayListado[i].imgSrc}" class="card-img-top" style="cursor:pointer" onclick="verRelacionados()">
     <div class="card-body">
       <h5 class="card-title">${arrayListado[i].name}</h5>
       <p class="card-text">${arrayListado[i].description}</p>
       <a href="#" class="btn btn-primary" onclick="verRelacionados()">Ver Producto</a>
+      </div>
     </div>
   </div>`
 })
@@ -31,11 +33,15 @@ function showProducto(array,arrayComments){
         let imgs ="";
         let comentarios = "";
          info += ` 
-         <h1 class="title-prod">${product.name}</h1>
+        <div class="row justify-content-center"> <h1 class="title-prod">${product.name}</h1></div>
+        <div class="row justify-content-center">
+        <div class="col-12 col-sm-12">
         <p class="desc-prod">${product.description}</p><br>
         <p class ="price-prod"> Precio:${product.currency} ${product.cost}</p>
 
         <small class="soldcount-prod">${product.soldCount} Disponibles</small>
+        </div>
+        </div>
         `;
          imgs+= `
          <ul class="slider">
@@ -57,8 +63,12 @@ function showProducto(array,arrayComments){
          arrayComments.forEach(function(comment){
              let puntos="";
           comentarios +=`
-          <strong>${comment.user}</strong> dice:<br>
-          <p>${comment.description}</p>   
+          <div class="col-12 col-sm-12"><strong>${comment.user}</strong> dice:<br>
+          <div class="col col-sm-12">
+          <p>${comment.description}</p>
+          </div>   
+          </div>
+          
           `;
           for(let i =1; i<= comment.score; i++ ){
               puntos += `<span class="fa fa-star checked"></span>`; 
@@ -66,8 +76,8 @@ function showProducto(array,arrayComments){
           for(let i=comment.score +1; i<=5; i++){
               puntos +=`<span class="fa fa-star"></span>`;
           }
-          comentarios += `<div style="text-align:right;">${puntos}</div>`;
-          comentarios += `<p class="date-prod">${comment.dateTime}</p><hr>`
+          comentarios += `<div class="col-12 col-sm-12" style="text-align:right;">${puntos}</div>`;
+          comentarios += `<div class="col-12 col-sm-12"><p class="date-prod">${comment.dateTime}</p><hr></div>`
 
         })
 

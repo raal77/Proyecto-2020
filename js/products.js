@@ -58,13 +58,15 @@ if(((minPag == undefined)|| (minPag != undefined && parseInt(product.cost) >= mi
         <div class="col">
          <h4>` + product.name + `</h4>
         <p class="mb-1"> ` + product.description + `</p><br>
-        <p class ="mb-2"> Precio: ` + product.currency + " "+ product.cost + ` </p>
+       
 
         <small class="text-muted"> ` + product.soldCount +` Disponibles</small>
 
          
            </div>
+           
       </div>
+      <div class="row"><div class="col"> <p class="col-4 col-sm-12 mb-2"> Precio: ` + product.currency + " "+ product.cost + ` </p></div></div>
       <br><hr><br>
       `
     }
