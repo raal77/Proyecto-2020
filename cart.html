@@ -33,7 +33,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
 </head>
-
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
 <body>
   <nav class="nav">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -45,19 +45,24 @@
       <div class="dropdown" id="info-user" style="display: none;">
         <button id="user" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a href="inicio.html" class="dropdown-item"><i class="fas fa-home"></i>&nbsp;&nbsp;Inicio</a>
+          <a href="categories.html" class="dropdown-item"><i class="fas fa-archive"></i>&nbsp;&nbsp;Categorías</a>
+            <a href="products.html" class="dropdown-item"><i class="far fa-folder-open"></i>&nbsp;&nbsp; Productos</a>
            <a href="my-profile.html" class="dropdown-item"><i class="fas fa-user"></i>&nbsp;&nbsp;Mi Perfil</a>
           <a id="salir" class="dropdown-item"><i class="far fa-times-circle"></i>&nbsp;&nbsp;Cerrar sesión</a>
         </div>
         </div>
-   
     </div>
-     
   </nav>
-  <h1 style=" text-align: center; font-family:Verdana, Geneva, Tahoma, sans-serif;color:dodgerblue;"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Carrito</h1>
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-   <br>
-     
-    <div id="prodcart" class="carrito">
+  <div class="row">
+  <h1 class="col-8" id="titlecarrito"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Carrito</h1>
+</div><br>
+
+   <div style="margin-left: 20px; margin-right: 20px;">
+     <div class="row">
+           <div id="prodcart" class="carrito  col-xl-8 col-sm-12 col-md-12 col-lg-8 ">
       <table>
         <thead class="thead">
             <tr>
@@ -76,98 +81,200 @@
           </tr>
         </tfoot>
       </table>
-     
-   
+    </div>
+    <!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
     
-     <div class="sell">
-       
-       <h2 style="text-align: center; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Resumen del pedido</h2><hr style="border: 1px  solid grey; ">
-       <div><h5>Zona de envío:</h5>
-         <input id="montevideo" type="radio" name="envio" value="2" checked="" required="" >
-         <label for="montevideo">Montevideo: 2 dias</label><br>
+     <div class="sell col" id="sell">
+      <h2 class="col" style="margin-bottom: 0px; text-align: center; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Datos de compra:</h2><hr style="border: 1px  solid grey; ">
+
+       <div style="display: flex;">
+      <label for="nombre" style="width: 20%;">Nombre:</label>
+        <input type="text"  id="nombre" class="form-control" required><br>
+      </div><br>
+      <!----------------------------------------------------------->
+      <div style="display: flex;"> 
+      <label for="pais" style="width: 20%;">Pais:</label>
+      <select id="paisEnvio" name="pais">
+        <option>Argentina</option>
+       <option>Bolivia</option>
+        <option>Brasil</option>
+        <option>Chile</option>
+        <option>Colombia</option>
+        <option>Ecuador</option>
+        <option>España</option>
+       <option>Estados Unidos</option>
+        <option>México</option>
+        <option>Paraguay</option>
+       <option>Perú</option>
+        <option>Portugal</option>
+        <option selected>Uruguay</option>
+        <option>Venezuela</option>
+        </select><br><br> 
+      </div><br>
+      <!--  ------------------------------------------------------------------>  
+      
+      <div style="display: flex;">
+        <label for="direccion" style="width: 20%;">Direccion:</label>
+        <input id="direccion" value="" type="text" class="form-control" required> 
+      </div><br>
+
+       <div style="display: flex;"> 
+        <label for="no" style="width: 10%;">N°:</label>
+      <input id="no" type="number" value="" class="form-control" required>
+        
+
+      <label for="esquina" style="width: 15%;">Esquina:</label> 
+      <input id="esquina" value="" type="text" class="form-control" required><hr>
+       </div><hr>
+
+
+
+
+       <div><h5>Tipo de envío:</h5>
+         <input id="premium" type="radio" name="envio" value="1" checked="" required=""  style="display: none;">
+         <label for="premium" id="labelpremium">Premium: 2-5 dias</label><br>
           
-         <input id="sur" type="radio" name="envio" value="4" required="" >
-         <label for="sur">Sur del Río Negro: 4 dias</label><br>
+         <input id="express" type="radio" name="envio" value="2" required="" style="display: none;" >
+         <label for="express" id="labelexpress">Express: 5-8 dias</label><br>
    
-         <input id="norte" type="radio" name="envio" value="6" required="" >
-         <label for="norte">Norte del Río Negro: 6 dias</label><br>
+         <input id="standard" type="radio" name="envio" value="3" required="" style="display: none;" >
+         <label for="standard" id="labelstandard">Standard: 12-15 dias</label><br>
+
+
+       
       
-      
+         <button class="btn btn-block btn-primary" id="btnPago" data-toggle="modal" data-target="#modalPagar">Elegir forma de pago</button>
+         <div>
+           <p id="elegir" class="d-none">Ingrese una forma de pago</p>
+           <p id="elegido" class="d-none">Forma de pago seleccionada</p>
+         </div>
        </div>
+       
+
        <br>
    
        <table class="send">
          <thead>
            <tr>
              <th>Precio de compra</th>
-             <th>Días para entregar</th>
+             <th>Precio de Envío</th>
              <th> Precio Final</th>
            </tr>
          </thead>
          <tbody  id="cargototal"></tbody>
        </table><br>
-       <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">Comprar</button>
+       <button type="submit" id="comprar"  class="btn btn-block btn-success" style="width: 100%;" >Comprar</button>
 
       </div>
-   
     </div>
+  </div>
+      <div class="row" id="confirmacion"></div>
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
 <!---------------------------------MODAL----------------------------------------------------------->
 
 <div class="modal fade" id="modalPagar">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Ingrese sus datos</h5>
+        <h5 class="modal-title">Formas de pago:</h5>
       </div>
-      <div id="modal-body" class="modal-body">
-        <form action="inicio.html" id="needs-validation" novalidate>
-          <div>
-            <h4>Datos del comprador:</h4>
-            <input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
-            <div class="invalid-feedback">Por favor, ingrese su nombre</div><br>   
+      <div id="modal-body" >
+        
+            <div style="margin-left: 20px; margin-top: 10px;display: flex;">
+            <input type="radio" name="formaPago" id="tarjeta" value="1" checked="" style="display: none;">
+            <label style="width: 45%;cursor: pointer;" class="mb-2" for="tarjeta">Tarjeta de crédito</label>
+            <br>
+            <input type="radio" name="formaPago" id="bancaria" value="2" style="display: none;">
+            <label style="width: 45%; margin-left:20px; cursor: pointer;" class="mb-2" for="bancaria">Transferencia Bancaria</label>
+          </div><hr>
 
-            <input type="text" id="apellido" class="form-control" placeholder="Apellido" required>
-            <div class="invalid-feedback">Por favor, ingrese su apellido</div><br>   
 
+         
+           <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+          
+           <div>
+             <div id="datosTarjeta">
+              <div style="display: flex;margin-left: 20px;"> 
+                <label style="width: 15%;" for="owner">Nombre:</label>
+               <input style="width: 70%; height: 30px;" class="form-control" type="text" id="owner">
+              </div><br>
+              <div style="display: flex; margin-left: 20px;">
+                <label style="width: 20%;" for="cardNumber">N° tarjeta:</label>
+               <input style="width: 70%;height: 30px;" class="form-control" type="number" id="cardNumber">
+               <img src="/img/tarjetas.jpg" id="visa" style="width: 30%;" >
+              </div><br>
+              <div style="display: flex;margin-left: 20px;">
+                <label style="width: 15%;" for="cvv">CVV:</label>
+               <input style="width: 40%; height: 30px;" class="form-control" type="number" id="cvv">
+               <img src="/img/cvv.png"  style="width: 30%; height: 70px;margin-left: 10px;">
+
+              </div><br>
+
+              <div   id="expiration-date" style="display: flex;width: 100%;" >
+                <label style="margin-left: 20px;"><i class="far fa-calendar-alt"></i> Fecha de vencimiento:</label>
+                
+                <select id="selectexpiration">
+                    <option value="01">Enero</option>
+                    <option value="02">Febrero </option>
+                    <option value="03">Marzo</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Mayo</option>
+                    <option value="06">Junio</option>
+                    <option value="07">Julio</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+                <select id="selectexpiration2" >
+                    <option value="16"> 2020</option>
+                    <option value="17"> 2021</option>
+                    <option value="18"> 2022</option>
+                    <option value="19"> 2023</option>
+                    <option value="20"> 2024</option>
+                    <option value="21"> 2025</option>
+                </select>
+            </div>
+            
+             </div>
+             <!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+             <div id="datosBanco" class="d-none">
+              <div style="width: 100%;margin-left: 20px;">
+                Seleccione su banco: <br>
+                <input type="radio" name="banco" checked="" required="" id="sant">
+                <label for="sant"><img src="/img/santander.png" style="width: 50%;margin-left: 10px;"></label> <br>
+                
+                <input type="radio" name="banco" required="" id="bbva">
+                <label for="bbva"><img src="/img/BBVA.png" style="width: 30%;margin-left: 10px;"></label> <br>
+                
+                <input type="radio" name="banco" required="" id="bcu">
+                <label for="bcu"><img src="/img/bcu.jpg" style="width: 40%;margin-left: 10px;"></label> <br>
+                
+                <input type="radio" name="banco" required="" id="scot">
+                <label for="scot"><img src="/img/scotiabank.png" style="width: 30%;margin-left: 10px;"></label><br>
+                </div>
+              <hr>
+              <div style="display: flex; margin-left: 20px;">
+               <label style="width: 20%;" for="cuenta">N° de cuenta:</label>
+               <input style="width: 60%; height: 30px; margin-left: 5px;" class="form-control" type="number" id="cuenta">
+              </div>
+              
+           </div>
+          
+             </div>
+             <div class="modal-footer">
+              <button type="button" class="btn btn-block btn-success" data-dismiss="modal">Listo</button>
+            </div>
           </div>
-          <div>
-            <h4>Datos para el envío:</h4>
-            <label for="depto">Departamento</label><br>
-            <select class="form-control" id="depto">
-              <option>Montevideo</option>
-              <option>Artigas</option>
-              <option>Canelones</option>
-              <option>Cerro Largo</option>
-              <option>Colonia</option>
-              <option>Durazono</option>
-              <option>Flores</option>
-              <option>Florida</option>
-              <option>Lavalleja</option>
-              <option>Maldonado</option>
-              <option>Paysandú</option>
-              <option>Río Negro</option>
-              <option>Rivera</option>
-              <option>Rocha</option>
-              <option>Salto</option>
-              <option>San José</option>
-              <option>Soriano</option>
-              <option>Tacuarembó</option>
-              <option>Treinta y Tres</option>
-            </select><br>
-            <input type="text" id="dir" class="form-control" placeholder="Dirección" required>
-            <div class="invalid-feedback">Por favor, ingrese su dirección</div><br>   
-
-          </div>
-
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-block btn-success">Confirmar Prestamo</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          </div>
-
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
+      <!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+      
   <!-------------------------------------------------------------------------------------------->
 
   <div id="spinner-wrapper">
@@ -178,6 +285,7 @@
       <div></div>
     </div>
   </div>
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////-->
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>

@@ -681,4 +681,85 @@ table tfoot td {
   
  }
 
+ .rojo{
+  color:red;
+  text-align: center;
+
+}
+.verde{
+ color: green;
+ text-align: center;
+}
+#titlecarrito{
+ text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+ color:dodgerblue; 
+}
+#sell{
+ padding: 10px;
+  background-color: rgb(228, 228, 241);
+}
+#nombre{
+ width: 80%; 
+ margin-left: 10px;
+ margin-right: 10px;
+  height: 1px;
+}
+#paisEnvio{
+ width: 80%; 
+ margin-left: 10px;
+  height: 40px;
+}
+#direccion{
+  width: 80%;
+  margin-left: 10px; 
+  height: 30px;
+}
+#no{
+ width: 30%;
+  margin-left: 10px;
+  margin-right: 10px;
+   height: 1px;
+}
+#esquina{
+ width: 45%;
+  margin-left: 10px;
+   height: 30px;
+}
+#labelpremium{
+ width: 50%; 
+ cursor: pointer; 
+ padding: 7px;
+ border-radius: 4px;
+ color: white;
+ background-color: teal;
+}
+#labelexpress{
+ width: 50%; 
+ cursor: pointer; 
+ padding: 7px;
+ border-radius: 4px;
+ color: white;
+ background-color: teal;
+}
+#labelstandard{
+ width: 50%; 
+ cursor: pointer; 
+ padding: 7px;
+ border-radius: 4px;
+ color: white;
+ background-color: teal;
+}
+#selectexpiration{
+ width: 20%;
+ height: 40px;
+ border-radius: 10px;
+  margin-left: 10px;
+}
+#selectexpiration2{
+ width: 20%;
+ height: 40px;
+ border-radius: 10px;
+}
+
 
