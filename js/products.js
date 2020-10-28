@@ -53,20 +53,25 @@ if(((minPag == undefined)|| (minPag != undefined && parseInt(product.cost) >= mi
     if(buscar == undefined || aBuscar.toLowerCase().indexOf(buscar) != -1){
 
         contenido += `
-        <div class="row">
-        <div class="col-3" id="img-ver"><img src ="`+ product.imgSrc + `"  class="img-thumbnail" onclick="verProducto()"></div>
-        <div class="col">
-         <h4>` + product.name + `</h4>
-        <p class="mb-1"> ` + product.description + `</p><br>
+        <div class="col-md-3 col-sm-12 card m-2" >
+          
+        <div class="" ><img id="img-ver" src ="`+ product.imgSrc + `"  class="card-img-top" onclick="verProducto()"></div>
+        <div class=" card-body ">
+         <h4 class="card-title">` + product.name + `</h4>
+        <p class="mb-1 card-text"> ` + product.description + `</p>
        
 
-        <small class="text-muted"> ` + product.soldCount +` Disponibles</small>
+        
 
          
            </div>
            
-      </div>
-      <div class="row"><div class="col"> <p class="col-4 col-sm-12 mb-2"> Precio: ` + product.currency + " "+ product.cost + ` </p></div></div>
+      <div style="display:flex;">
+       <p class="btn-prod"> Precio: ` + product.currency + " "+ product.cost + ` </p>
+       <small class="text-muted" style="margin-left:50px;"> ` + product.soldCount +` Disponibles</small>
+       </div>
+       </div>
+       
       <br><hr><br>
       `
     }

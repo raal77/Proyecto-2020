@@ -755,5 +755,11 @@ table tfoot td {
  height: 40px;
  border-radius: 10px;
 }
-
+.btn-prod{
+  color: #fff;
+  background-color: #1883ba;
+  border-radius: 4px;
+  padding: 7px;
+  width: 60%;
+}
 
